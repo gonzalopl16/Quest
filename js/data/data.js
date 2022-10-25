@@ -12,13 +12,13 @@ export const data = [
     {
         question: 'Pregunta 2',
         option: [
-            'opción 1',
+            'verdadero',
             'opción 2',
             'opción 3',
             'opción 4',
             'opción 5'
         ],
-        answer: 'opción 1'
+        answer: 'verdadero'
     },
 
     {

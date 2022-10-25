@@ -3,7 +3,7 @@ html {
     margin: 0;
 }
 
-body {
+.contenedor {
     background: #3333;
     display: flex;
     justify-content: center;
@@ -48,4 +48,8 @@ h1{
 
 #progress {
     font-size: 20px;
+}
+
+.image {
+    width: 500px;
 }

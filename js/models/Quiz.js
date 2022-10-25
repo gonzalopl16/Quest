@@ -41,5 +41,15 @@ export class Quiz {
         this.questionIndex++;
     }
 
+    /**
+     * 
+     * @param {string} answer 
+     * @param {Quiz} quest
+     * @returns {boolean}
+     */
+    compareAnswer(answer, quest){
+            return quest.getQuestionIndex().correctAnwer(answer);
+    }
+
 }
 
