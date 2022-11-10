@@ -17,9 +17,9 @@ const renderPage = (quiz, ui) => {
             console.log(currentOption)
             let condition = quiz.getQuestionIndex().correctAnwer(currentOption);
             if (condition) {
-                showImgCorrect(quiz, ui);
+                showImg(quiz, ui, 'enciende');
             } else {
-                showImgIncorrect(quiz, ui);
+                showImg(quiz, ui, 'no enciende');
             }
             quiz.guess(currentOption);
             
@@ -28,10 +28,9 @@ const renderPage = (quiz, ui) => {
     }
 }
 
-function showImgCorrect(quiz, ui) {
-    let number = Math.floor((Math.random() * (4 - 1 + 1)) + 1);
+function showImg(quiz, ui, condition) {
     const quizImgHTML = `
-        <img class="container" id="image" src="./img/correct/${number}.jpg">`;
+        <img class="container" id="image" src="./img/${condition}.png">`;
     const element = document.getElementById('quiz');
     element.insertAdjacentHTML("beforeend",
         quizImgHTML);
@@ -43,25 +42,7 @@ function showImgCorrect(quiz, ui) {
     setTimeout(() => {
         renderPage(quiz, ui);
         document.getElementById('image').remove();
-    }, 5000);
-}
-
-function showImgIncorrect(quiz, ui) {
-    let number = Math.floor((Math.random() * (4 - 2 + 1)) + 2);
-    const quizImgHTML = `
-        <img class="container" id="image" src="./img/incorrect/${number}.jpeg">`;
-    const element = document.getElementById('quiz');
-    element.insertAdjacentHTML("beforeend",
-        quizImgHTML);
-    let buttons = document.querySelectorAll('.button');
-    buttons = [...buttons];
-    buttons.forEach(e => {
-        e.remove();
-    })
-    setTimeout(() => {
-        renderPage(quiz, ui);
-        document.getElementById('image').remove();
-    }, 5000);
+    }, 3000);
 }
 
 function main() {

@@ -36,9 +36,9 @@ export class Quiz {
 
         if(this.getQuestionIndex().correctAnwer(answer)){
             this.score++;
+            this.questionIndex++;
         }
 
-        this.questionIndex++;
     }
 
     /**

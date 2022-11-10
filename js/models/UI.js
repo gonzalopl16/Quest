@@ -34,10 +34,10 @@ export class UI {
      * 
      * @param {number} score 
      */
-    showScore(score){
+    showScore(){
         const quizEndHTML = `
-        <h1>Resultado</h1>
-        <h2>Tu es Score: ${score}</h2>`;
+        <h1>Felicitaciones</h1>
+        <h2>Completamos el cuestionario Juntos, gracias por su cooperación</h2>`;
         const element = document.getElementById('quiz');
         element.innerHTML = quizEndHTML;
     }
